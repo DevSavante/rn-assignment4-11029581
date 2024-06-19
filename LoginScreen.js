@@ -2,7 +2,9 @@ import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const JobizzComponent = () => {
+
+
+export default function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.jobizzText}>Jobizz</Text>
@@ -12,7 +14,10 @@ const JobizzComponent = () => {
         <TextInput style={styles.textBox} placeholder="Name" />
         <TextInput style={styles.textBox} placeholder="Email" />
       </View>
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity 
+      style={styles.loginButton}
+      onPress={() => navigation.navigate('Home')}
+      >
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
       <View style={styles.lineContainer}>
@@ -133,7 +138,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around', // Space between icons
     marginTop: 60, // Margin top to provide spacing from the text
-    marginBottom:60,
+    marginBottom:30,
   },
   icon: {
     marginHorizontal: 10, // Reduce space between icons
@@ -166,4 +171,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default JobizzComponent;
+

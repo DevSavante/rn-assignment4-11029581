@@ -1,20 +1,18 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import JobizzComponent from './LoginScreen'; // Adjust the path as necessary
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './HomeScreen';
+import LoginScreen from './LoginScreen';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <JobizzComponent />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start', // Change to flex-start to align with the top
-    alignItems: 'flex-start', // Align items to the start to match left alignment
-    backgroundColor: '#f7f0e8',
-  },
-});
